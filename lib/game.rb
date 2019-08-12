@@ -179,4 +179,11 @@ class Game
     end
   end
 
+  def start
+    user_input = ""
+    while user_input != "exit"
+      user_input = gets.trim
+    end
+  end
+
 end
