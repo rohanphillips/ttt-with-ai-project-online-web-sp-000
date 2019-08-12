@@ -7,8 +7,8 @@ module Players
       #suspect there's something wrong here
     end
   end
-  
-  class Computer < Player 
+
+  class Computer < Player
     def move(board)
       board.turn_count
       collection = []
