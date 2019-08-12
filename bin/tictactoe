@@ -3,4 +3,4 @@
 require_relative '../config/environment'
 require_relative '../lib/board.rb'
 
-myGame = Game.new
+myGame = Game.new()
