@@ -139,10 +139,6 @@ class Game
     return draw? == true || won? != false || full? == true
   end
 
-  def input_to_index(i)
-    userinput = i.strip
-    input = userinput.to_i - 1
-  end
 
   def turn()
    valid = false
@@ -165,7 +161,7 @@ class Game
       puts "Welcome to Tic Tac Toe!"
       board.display
       while isover == false
-        puts "It's player #{current_player}'s turn"
+        puts "It's player #{current_player.token}'s turn"
         turn
         result = won?
         isover = over?
