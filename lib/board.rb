@@ -33,8 +33,7 @@ class Board
     return isfull
   end
 
-  def turn_count()
-    i = 0
+  def turn_count
     turncount = 0
     @cells.each{|cell|
       if cell != " "
