@@ -181,7 +181,12 @@ class Game
 
   def start
     user_input = ""
+
+
     while user_input != "exit"
+      puts "Welcome to Tic Tac Toe Game Selector"
+      puts "What kind of game would you like to play, 0, 1 or 2 players?"
+      puts "Please enter your selection - exit ends this session"
       user_input = gets.trim
     end
   end
