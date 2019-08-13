@@ -146,7 +146,7 @@ class Game
     puts "Please enter 1-9:"
     binding.pry
     mymove = current_player.move(board)
-  
+
     if board.valid_move?(mymove)
       if board.taken?(mymove) == false
         board.update(mymove, current_player)
