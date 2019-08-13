@@ -199,14 +199,16 @@ class Game
       case user_input
         when "0"
           puts "Option 0 selected, Player #{player_selection} will play first"
+          player_1 = Players::Computer.new("X")
+          player_2 = Players::Computer.new("O")
         when "1"
           puts "Option 1 selected, Player #{player_selection} will play first"
           case player_selection
             when 1
               player_1 = Players::Human.new("X")
-              player_2 = Players::Human.new("O")
+              player_2 = Players::Computer.new("O")
             when 2
-              player_1 = Players::Human.new("O")
+              player_1 = Players::Computer.new("O")
               player_2 = Players::Human.new("X")
           end
         when "2"
