@@ -209,7 +209,8 @@ class Game
           puts "Option 1 selected, Player #{player_selection} will play first"
         when "2"
           puts "Option 2 selected, Player #{player_selection} will play first"
-          newgame = Game.new(player_1, player_2).play
+          newgame = Game.new(player_1, player_2)
+          newgame.play
       end
     end
   end
