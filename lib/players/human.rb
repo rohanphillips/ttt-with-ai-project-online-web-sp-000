@@ -52,14 +52,15 @@ module Players
       puts "nearwin is " + nearwin.to_s
       if nearwin[0] == "true"
         win_index = nearwin[1].to_i
+        puts "win_index is " + win_index.to_s
         location = nearwin[2].to_i
         case location
           when 0
-            play_location = WIN_COMBINATIONS[win_index][2]
+            play_location = WIN_COMBINATIONS[win_index][2] + 1
           when 2
-            play_location = WIN_COMBINATIONS[win_index][0]
+            play_location = WIN_COMBINATIONS[win_index][0] + 1
           when 1
-            play_location = WIN_COMBINATIONS[win_index][1]
+            play_location = WIN_COMBINATIONS[win_index][1] + 1
         end
       else
         play_location = collection[rand(collection.size - 1)]
