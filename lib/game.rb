@@ -195,24 +195,33 @@ class Game
         puts "Which player (1 or 2) will play first and be X?"
         player_selection = gets.strip.to_i
       end
-      case player_selection
-        when 1
-          player_1 = Players::Human.new("X")
-          player_2 = Players::Human.new("O")
-        when 2
-          player_1 = Players::Human.new("O")
-          player_2 = Players::Human.new("X")
-      end
+      
       case user_input
         when "0"
           puts "Option 0 selected, Player #{player_selection} will play first"
         when "1"
           puts "Option 1 selected, Player #{player_selection} will play first"
+          case player_selection
+            when 1
+              player_1 = Players::Human.new("X")
+              player_2 = Players::Human.new("O")
+            when 2
+              player_1 = Players::Human.new("O")
+              player_2 = Players::Human.new("X")
+          end
         when "2"
           puts "Option 2 selected, Player #{player_selection} will play first"
-          newgame = Game.new(player_1, player_2, Board.new).play
+          case player_selection
+            when 1
+              player_1 = Players::Human.new("X")
+              player_2 = Players::Human.new("O")
+            when 2
+              player_1 = Players::Human.new("O")
+              player_2 = Players::Human.new("X")
+          end        
 
       end
+      newgame = Game.new(player_1, player_2, Board.new).play
     end
   end
 
