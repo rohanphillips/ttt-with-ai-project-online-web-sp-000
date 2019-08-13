@@ -49,22 +49,24 @@ module Players
         collection << "#{index + 1}"
       }
       nearwin = near_win?(board, inverse_token(self.token)).split(", ")
-
+      puts "nearwin is " + nearwin.to_s
       if nearwin[0] == "true"
         win_index = nearwin[1].to_i
         location = nearwin[2].to_i
         case location
           when 0
-            play_location = WIN_COMBINATIONS[win_index][2].to_i
+            play_location = WIN_COMBINATIONS[win_index][2]
           when 2
-            play_location = WIN_COMBINATIONS[win_index][0].to_i
+            play_location = WIN_COMBINATIONS[win_index][0]
           when 1
-            play_location = WIN_COMBINATIONS[win_index][1].to_i
+            play_location = WIN_COMBINATIONS[win_index][1]
         end
       else
         play_location = collection[rand(collection.size - 1)]
       end
-      play_location.to_i
+      puts "play_location is " + play_location.to_s
+      binding.pry
+      play_location.to_s
     end
   end
 end
