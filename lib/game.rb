@@ -198,11 +198,11 @@ class Game
       end
       case player_selection
         when 1
-          player_1 = Player.new("X")
-          player_2 = Player.new("O")
+          player_1 = Player::Human.new("X")
+          player_2 = Player::Human.new("O")
         when 2
-          player_1 = Player.new("O")
-          player_2 = Player.new("X")
+          player_1 = Player::Human.new("O")
+          player_2 = Player::Human.new("X")
       end
       case user_input
         when "0"
