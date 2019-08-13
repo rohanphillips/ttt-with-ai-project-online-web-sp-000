@@ -31,11 +31,11 @@ module Players
     def near_win?(board, with_token)
       nearwin = "false, -1, -1"
       WIN_COMBINATIONS.each.with_index{|combo, index|
-        if (board.cells[combo[0]] == with_token && board.cells[combo[1]] == with_token)
+        if (board.cells[combo[0]] == with_token && board.cells[combo[1]] == with_token && board.cells[combo[2]] == " ")
           return "true, #{index}, 0"
-        elsif (board.cells[combo[1]] == with_token && board.cells[combo[2]] == with_token)
+        elsif (board.cells[combo[0]] == " " && board.cells[combo[1]] == with_token && board.cells[combo[2]] == with_token)
           return "true, #{index}, 2"
-        elsif (board.cells[combo[0]] == with_token && board.cells[combo[2]] == with_token)
+        elsif (board.cells[combo[0]] == with_token && board.cells[combo[1]] == " " && board.cells[combo[2]] == with_token)
           return "true, #{index}, 1"
         end
       }
@@ -65,7 +65,6 @@ module Players
         play_location = collection[rand(collection.size - 1)]
       end
       puts "play_location is " + play_location.to_s
-      binding.pry
       play_location.to_s
     end
   end
