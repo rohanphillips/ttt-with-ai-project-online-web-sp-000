@@ -31,7 +31,7 @@ module Players
     def near_win?(board, with_token)
       nearwin = "false, -1, -1"
       WIN_COMBINATIONS.each.with_index{|combo, index|
-        if (board.cells[combo[0]] == with_token && board.cells[combo[1]] == with_token) 
+        if (board.cells[combo[0]] == with_token && board.cells[combo[1]] == with_token)
           return "true, #{index}, 0"
         elsif (board.cells[combo[1]] == with_token && board.cells[combo[2]] == with_token)
           return "true, #{index}, 2"
@@ -49,7 +49,7 @@ module Players
         collection << "#{index + 1}"
       }
       nearwin = near_win?(board, inverse_token(self.token)).split(", ")
-      
+
       if nearwin[0] == "true"
         win_index = nearwin[1].to_i
         location = nearwin[2].to_i
@@ -61,14 +61,12 @@ module Players
           when 1
             play_location = WIN_COMBINATIONS[win_index][1].to_i
         end
-        puts board
-        binding.pry 
       else
         play_location = rand(collection.size - 1)
       end
-      
-      collection[play_location] 
-            
+
+      collection[play_location]
+
     end
   end
 end
