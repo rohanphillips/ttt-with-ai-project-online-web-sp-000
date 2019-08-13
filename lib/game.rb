@@ -142,7 +142,9 @@ class Game
 
   def turn()
    valid = false
-   while valid == false
+   counter = 0
+   while valid == false && counter < 12
+     counter += 1
     puts "Please enter 1-9:"
     mymove = current_player.move(board)
 
