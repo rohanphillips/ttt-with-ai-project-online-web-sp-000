@@ -34,6 +34,8 @@ module Players
         if (board.cells[combo[0]] == with_token && board.cells[combo[1]] == with_token) 
           return "true, #{index}, 0"
         elsif (board.cells[combo[1]] == with_token && board.cells[combo[2]] == with_token)
+          return "true, #{index}, 2"
+        elsif (board.cells[combo[0]] == with_token && board.cells[combo[2]] == with_token)
           return "true, #{index}, 1"
         end
       }
@@ -54,14 +56,19 @@ module Players
         case location
           when 0
             play_location = WIN_COMBINATIONS[win_index][2].to_i
-          when 1
+          when 2
             play_location = WIN_COMBINATIONS[win_index][0].to_i
+          when 1
+            play_location = WIN_COMBINATIONS[win_index][1].to_i
         end
+        puts board
+        binding.pry 
       else
         play_location = rand(collection.size - 1)
       end
-      collection[play_location]     
       
+      collection[play_location] 
+            
     end
   end
 end
