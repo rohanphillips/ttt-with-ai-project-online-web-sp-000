@@ -195,6 +195,7 @@ class Game
           puts "Option 1 selected"
         when "2"
           puts "Option 2 selected"
+      end
     end
   end
 
