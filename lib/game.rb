@@ -188,6 +188,13 @@ class Game
       puts "What kind of game would you like to play, 0, 1 or 2 players?"
       puts "Please enter your selection - exit ends this session"
       user_input = gets.trim
+      case user_input
+        when "0"
+          puts "Option 0 selected"
+        when "1"
+          puts "Option 1 selected"
+        when "2"
+          puts "Option 2 selected"
     end
   end
 
