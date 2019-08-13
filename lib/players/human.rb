@@ -65,6 +65,7 @@ module Players
         play_location = collection[rand(collection.size - 1)]
       end
       play_location.to_i
+      binding.pry
     end
   end
 end
