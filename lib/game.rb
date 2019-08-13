@@ -221,7 +221,7 @@ class Game
           end
           newgame = Game.new(player_1, player_2, Board.new).play
       end
-      
+
     end
   end
 
