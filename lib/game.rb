@@ -192,7 +192,7 @@ class Game
 
       while player_selection < 1 || player_selection > 2
         puts "Which player (1 or 2) will play first and be X?"
-        player_selection = gets.strip
+        player_selection = gets.strip.to_i
       end
       case user_input
         when "0"
