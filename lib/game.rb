@@ -145,7 +145,7 @@ class Game
    while valid == false
     puts "Please enter 1-9:"
     mymove = current_player.move(board)
-
+    binding.pry
     if board.valid_move?(mymove)
       if board.taken?(mymove) == false
         board.update(mymove, current_player)
