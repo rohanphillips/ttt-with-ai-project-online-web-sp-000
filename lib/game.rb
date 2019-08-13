@@ -195,11 +195,11 @@ class Game
       end
       case user_input
         when "0"
-          puts "Option 0 selected, Player #{playerselection} will play first"
+          puts "Option 0 selected, Player #{player_selection} will play first"
         when "1"
-          puts "Option 1 selected, Player #{playerselection} will play first"
+          puts "Option 1 selected, Player #{player_selection} will play first"
         when "2"
-          puts "Option 2 selected, Player #{playerselection} will play first"
+          puts "Option 2 selected, Player #{player_selection} will play first"
           newgame = Game.new().play
       end
     end
