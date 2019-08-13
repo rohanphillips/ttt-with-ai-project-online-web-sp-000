@@ -4,4 +4,4 @@ require_relative '../config/environment'
 require_relative '../lib/board.rb'
 
 mygame = Game.new()
-mygame.play
+mygame.start
