@@ -219,9 +219,9 @@ class Game
               player_1 = Players::Human.new("O")
               player_2 = Players::Human.new("X")
           end
-
+          newgame = Game.new(player_1, player_2, Board.new).play
       end
-      newgame = Game.new(player_1, player_2, Board.new).play
+      
     end
   end
 
