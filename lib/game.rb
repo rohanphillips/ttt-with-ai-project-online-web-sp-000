@@ -187,7 +187,7 @@ class Game
       puts "Welcome to Tic Tac Toe Game Selector"
       puts "What kind of game would you like to play, 0, 1 or 2 players?"
       puts "Please enter your selection - exit ends this session"
-      user_input = gets.trim
+      user_input = gets
       case user_input
         when "0"
           puts "Option 0 selected"
