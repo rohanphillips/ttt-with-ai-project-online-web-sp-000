@@ -193,6 +193,7 @@ class Game
         puts "Which player (1 or 2) will play first and be X?"
         player_selection = gets.strip
       end
+      binding.pry
       case user_input
         when "0"
           puts "Option 0 selected, Player #{player_selection} will play first"
