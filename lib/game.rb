@@ -191,7 +191,7 @@ class Game
       player_selection = 0
       user_input = gets.strip
 
-      while player_selection < 1 || player_selection > 2
+      while (player_selection < 1 || player_selection > 2) && user_input != "exit"
         puts "Which player (1 or 2) will play first and be X?"
         player_selection = gets.strip.to_i
       end
