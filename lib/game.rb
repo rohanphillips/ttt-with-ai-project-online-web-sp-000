@@ -201,6 +201,7 @@ class Game
           puts "Option 0 selected, Player #{player_selection} will play first"
           player_1 = Players::Computer.new("X")
           player_2 = Players::Computer.new("O")
+          newgame = Game.new(player_1, player_2, Board.new).play
         when "1"
           puts "Option 1 selected, Player #{player_selection} will play first"
           case player_selection
@@ -211,6 +212,7 @@ class Game
               player_1 = Players::Computer.new("O")
               player_2 = Players::Human.new("X")
           end
+          newgame = Game.new(player_1, player_2, Board.new).play
         when "2"
           puts "Option 2 selected, Player #{player_selection} will play first"
           case player_selection
