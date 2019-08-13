@@ -62,11 +62,9 @@ module Players
             play_location = WIN_COMBINATIONS[win_index][1].to_i
         end
       else
-        play_location = rand(collection.size - 1)
+        play_location = collection[rand(collection.size - 1)]
       end
-
-      collection[play_location]
-
+      play_location
     end
   end
 end
