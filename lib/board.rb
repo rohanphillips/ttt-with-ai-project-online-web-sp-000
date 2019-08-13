@@ -49,7 +49,7 @@ class Board
 
   def valid_move?(move)
     will_return = false
-    if move.to_i.between?(0,8) && move != "invalid"
+    if move.to_i.between?(1,9) && move != "invalid"
       will_return = taken?(move.to_i) == false ? true : false
     end
     will_return

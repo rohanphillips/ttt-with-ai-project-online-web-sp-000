@@ -139,10 +139,6 @@ class Game
     return draw? == true || won? != false || full? == true
   end
 
-  def input_to_index(i)
-    userinput = i.strip
-    input = userinput.to_i - 1
-  end
 
   def turn()
    valid = false
@@ -165,7 +161,7 @@ class Game
       puts "Welcome to Tic Tac Toe!"
       board.display
       while isover == false
-        puts "It's player #{current_player}'s turn"
+        puts "It's player #{current_player.token}'s turn"
         turn
         result = won?
         isover = over?
@@ -180,6 +176,55 @@ class Game
       if draw? == true
         puts "Cat's Game!"
       end
+    end
+  end
+
+  def start
+    user_input = ""
+
+
+    while user_input != "exit"
+      puts "Welcome to Tic Tac Toe Game Selector"
+      puts "What kind of game would you like to play, 0, 1 or 2 players?"
+      puts "Please enter your selection - exit ends this session"
+      player_selection = 0
+      user_input = gets.strip
+
+      while (player_selection < 1 || player_selection > 2) && user_input != "exit"
+        puts "Which player (1 or 2) will play first and be X?"
+        player_selection = gets.strip.to_i
+      end
+
+      case user_input
+        when "0"
+          puts "Option 0 selected, Player #{player_selection} will play first"
+          player_1 = Players::Computer.new("X")
+          player_2 = Players::Computer.new("O")
+          newgame = Game.new(player_1, player_2, Board.new).play
+        when "1"
+          puts "Option 1 selected, Player #{player_selection} will play first"
+          case player_selection
+            when 1
+              player_1 = Players::Human.new("X")
+              player_2 = Players::Computer.new("O")
+            when 2
+              player_1 = Players::Computer.new("O")
+              player_2 = Players::Human.new("X")
+          end
+          newgame = Game.new(player_1, player_2, Board.new).play
+        when "2"
+          puts "Option 2 selected, Player #{player_selection} will play first"
+          case player_selection
+            when 1
+              player_1 = Players::Human.new("X")
+              player_2 = Players::Human.new("O")
+            when 2
+              player_1 = Players::Human.new("O")
+              player_2 = Players::Human.new("X")
+          end
+          newgame = Game.new(player_1, player_2, Board.new).play
+      end
+
     end
   end
 
