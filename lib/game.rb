@@ -142,7 +142,7 @@ class Game
 
   def turn()
    valid = false
-   while valid == false 
+   while valid == false
     puts "Please enter 1-9:"
     mymove = current_player.move(board)
     binding.pry
