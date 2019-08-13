@@ -44,7 +44,7 @@ class Board
   end
 
   def taken?(index)
-    !(@cells[index.to_i].nil? || @cells[index.to_i] == " ")
+    !(@cells[index.to_i - 1].nil? || @cells[index.to_i - 1] == " ")
   end
 
   def valid_move?(move)
