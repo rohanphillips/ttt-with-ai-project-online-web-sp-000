@@ -64,7 +64,7 @@ module Players
       else
         play_location = collection[rand(collection.size - 1)]
       end
-      play_location
+      play_location.to_i
     end
   end
 end
